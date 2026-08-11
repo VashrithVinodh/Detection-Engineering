@@ -1,0 +1,21 @@
+Technique: T1486
+Tactic: Impact
+Data Source: FileCreationEvents
+
+Behavior:
+Multiple files are created with an encryption-related extension.
+
+Detection Logic:
+10+ .encrypted files created on the same host.
+
+False Positives:
+Legitimate encryption/compression software.
+
+Severity:
+High
+
+Detection:
+FileCreationEvents
+| where filename endswith ".encrypted"
+| summarize EncryptedFiles=count() by hostname
+| where EncryptedFiles >= 10
