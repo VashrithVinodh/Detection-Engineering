@@ -9,9 +9,10 @@ This repository focuses on translating attacker behavior into practical detectio
 ```text
 .
 ├── kql/
+|   ├── T1071.004-dns-c2-beaconing.md
+│   ├── T1071.001-suspicious-web-c2-pattern.md
 │   ├── T1105-ingress-tool-transfer-curl.kql
-│   ├── T1486-data-encrypted-for-impact.kql
-|   └── T1071.001-suspicious-web-c2-pattern.md
+|   └── T1486-data-encrypted-for-impact.kql
 │
 ├── sigma/
 │   └── ...
