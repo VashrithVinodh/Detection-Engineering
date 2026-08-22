@@ -1,0 +1,21 @@
+title: Linux User UID Changed to Root
+description: Detects the use of usermod to change an existing Linux user's UID to 0, potentially granting the account root-level privileges.
+status: experimental
+author: Vashrith Vinodh
+tags:
+    - attack.account-manipulation
+    - attack.t1098
+logsource:
+    product: linux
+    category: process_creation
+detection:
+    selection_usermod:
+        CommandLine|contains: 'usermod'
+    selection_uid:
+        CommandLine|contains: '-u 0'
+    condition: selection_usermod and selection_uid
+falsepositives:
+    - Legitimate system administration
+    - User account provisioning
+    - Authorized privilege management
+level: high
