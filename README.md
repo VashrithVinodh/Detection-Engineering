@@ -19,6 +19,6 @@ This repository focuses on translating attacker behavior into practical detectio
 |   └── T1566.002-suspicious-phishing-link.md
 │
 ├── sigma/
-│   └── ...
+│   └── T1098-linux-backdoor-user-account-creation..yml
 │
 └── README.md
